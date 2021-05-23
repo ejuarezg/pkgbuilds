@@ -1,0 +1,59 @@
+# Maintainer: Me
+# Contributor: Julien Nicoulaud <julien.nicoulaud@gmail.com>
+
+_pkgname=zellij
+pkgname=zellij-bin
+pkgver=0.11.0
+pkgrel=3
+pkgdesc="A terminal workspace and multiplexer."
+arch=('x86_64' 'aarch64')
+url="https://zellij.dev"
+license=('MIT')
+provides=('zellij')
+makedepends=('gendesk' 'imagemagick')
+optdepends=('alacritty: start a zellij session using included desktop file')
+conflicts=('zellij-git' 'zellij')
+source_x86_64=("https://github.com/zellij-org/${_pkgname}/archive/refs/tags/v${pkgver}.tar.gz"
+        "https://github.com/zellij-org/${_pkgname}/releases/download/v${pkgver}/${_pkgname}-x86_64-unknown-linux-musl.tar.gz"
+        "https://raw.githubusercontent.com/zellij-org/zellij/main/assets/logo.png")
+source_aarch64=("https://github.com/zellij-org/${_pkgname}/archive/refs/tags/v${pkgver}.tar.gz"
+        "https://github.com/zellij-org/${_pkgname}/releases/download/v${pkgver}/${_pkgname}-aarch64-unknown-linux-musl.tar.gz"
+        "https://raw.githubusercontent.com/zellij-org/zellij/main/assets/logo.png")
+sha256sums_x86_64=('2a6a21b9dd62bc92ef3484c24ba1d76e07e5a5c67513dd016653df2e2a00e94b'
+                   '61662347a9cbd1ae6699157ee2ceb842d8ac5506dd7325d97903382b732387c0'
+                   '3e027c6479ac9d6605accc50f7a4b76ac6606d0ca7cde12d1dddd1951e5c64ec')
+sha256sums_aarch64=('2a6a21b9dd62bc92ef3484c24ba1d76e07e5a5c67513dd016653df2e2a00e94b'
+                    '2b33e273210615146a92f458e179dbd1d9399183a1435213859098af75e169a7'
+                    '3e027c6479ac9d6605accc50f7a4b76ac6606d0ca7cde12d1dddd1951e5c64ec')
+
+prepare() {
+    # Generate shell completions
+    ./zellij setup --generate-completion bash > zellij.bash
+    ./zellij setup --generate-completion fish > zellij.fish
+    ./zellij setup --generate-completion zsh > zellij.zsh
+
+    # Resize logo
+    convert -resize 128x128 logo.png zellij.png
+
+    # Desktop file
+    gendesk -f -n \
+        --pkgname "${_pkgname}" \
+        --pkgdesc "${pkgdesc}" \
+        --icon "${_pkgname}" \
+        --categories "System;Development" \
+        --exec "alacritty --class zellij,zellij --command zellij"
+
+}
+
+package() {
+    install -Dm755 zellij -t "${pkgdir}/usr/bin"
+    install -Dm644 zellij.bash "${pkgdir}/usr/share/bash-completion/completions/${_pkgname}"
+    install -Dm644 zellij.fish "${pkgdir}/usr/share/fish/vendor_completions.d/${_pkgname}.fish"
+    install -Dm644 zellij.zsh "${pkgdir}/usr/share/zsh/site-functions/_${_pkgname}"
+    install -Dm644 zellij.desktop -t "${pkgdir}/usr/share/applications"
+    install -Dm644 zellij.png -t "${pkgdir}/usr/share/icons/hicolor/128x128/apps"
+
+    cd "${_pkgname}-${pkgver}"
+    install -Dm644 GOVERNANCE.md README.md -t "${pkgdir}/usr/share/doc/${_pkgname}"
+    install -Dm644 LICENSE.md -t "${pkgdir}/usr/share/licenses/${_pkgname}"
+}

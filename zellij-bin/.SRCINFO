@@ -1,0 +1,29 @@
+pkgbase = zellij-bin
+	pkgdesc = A terminal workspace and multiplexer.
+	pkgver = 0.11.0
+	pkgrel = 3
+	url = https://zellij.dev
+	arch = x86_64
+	arch = aarch64
+	license = MIT
+	makedepends = gendesk
+	makedepends = imagemagick
+	optdepends = alacritty: start a zellij session using included desktop file
+	provides = zellij
+	conflicts = zellij-git
+	conflicts = zellij
+	source_x86_64 = https://github.com/zellij-org/zellij/archive/refs/tags/v0.11.0.tar.gz
+	source_x86_64 = https://github.com/zellij-org/zellij/releases/download/v0.11.0/zellij-x86_64-unknown-linux-musl.tar.gz
+	source_x86_64 = https://raw.githubusercontent.com/zellij-org/zellij/main/assets/logo.png
+	sha256sums_x86_64 = 2a6a21b9dd62bc92ef3484c24ba1d76e07e5a5c67513dd016653df2e2a00e94b
+	sha256sums_x86_64 = 61662347a9cbd1ae6699157ee2ceb842d8ac5506dd7325d97903382b732387c0
+	sha256sums_x86_64 = 3e027c6479ac9d6605accc50f7a4b76ac6606d0ca7cde12d1dddd1951e5c64ec
+	source_aarch64 = https://github.com/zellij-org/zellij/archive/refs/tags/v0.11.0.tar.gz
+	source_aarch64 = https://github.com/zellij-org/zellij/releases/download/v0.11.0/zellij-aarch64-unknown-linux-musl.tar.gz
+	source_aarch64 = https://raw.githubusercontent.com/zellij-org/zellij/main/assets/logo.png
+	sha256sums_aarch64 = 2a6a21b9dd62bc92ef3484c24ba1d76e07e5a5c67513dd016653df2e2a00e94b
+	sha256sums_aarch64 = 2b33e273210615146a92f458e179dbd1d9399183a1435213859098af75e169a7
+	sha256sums_aarch64 = 3e027c6479ac9d6605accc50f7a4b76ac6606d0ca7cde12d1dddd1951e5c64ec
+
+pkgname = zellij-bin
+
