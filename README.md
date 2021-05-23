@@ -7,4 +7,3 @@ This repo hosts PKGBUILD files for packages that I use not found in the Arch Use
 These are important notes on some of the packages:
 
 - `nomino-bin`: Orphaned in AUR.
-- `otf-san-francisco-pro`: No longer found in AUR.
