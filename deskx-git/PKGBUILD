@@ -1,0 +1,32 @@
+# Maintainer: Me
+
+_pkgname="deskx"
+pkgname="${_pkgname}-git"
+pkgver=1.0.r2.g8180544
+pkgrel=1
+pkgdesc='Program for remote control of a computer in a local network.'
+arch=('x86_64')
+url='https://github.com/DeskX11/DeskX'
+license=('Apache')
+depends=('libx11' 'libxtst' 'openssl')
+makedepends=('git' 'make')
+provides=('deskx')
+conflicts=('deskx' 'deskx-bin')
+source=("$pkgname::git+${url}.git")
+md5sums=('SKIP')
+
+pkgver() {
+  cd $pkgname
+  git describe --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+build() {
+  cd "${pkgname}/src"
+  make all
+}
+
+package() {
+  cd "${pkgname}/src"
+  install -Dm755 dxc dxs -t "${pkgdir}/usr/bin"
+  install -Dm644 ../LICENSE -t "${pkgdir}/usr/share/licenses/${_pkgname}"
+}

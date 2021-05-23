@@ -1,0 +1,20 @@
+pkgbase = deskx-git
+	pkgdesc = Program for remote control of a computer in a local network.
+	pkgver = 1.0.r2.g8180544
+	pkgrel = 1
+	url = https://github.com/DeskX11/DeskX
+	arch = x86_64
+	license = Apache
+	makedepends = git
+	makedepends = make
+	depends = libx11
+	depends = libxtst
+	depends = openssl
+	provides = deskx
+	conflicts = deskx
+	conflicts = deskx-bin
+	source = deskx-git::git+https://github.com/DeskX11/DeskX.git
+	md5sums = SKIP
+
+pkgname = deskx-git
+
