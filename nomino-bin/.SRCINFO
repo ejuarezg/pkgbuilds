@@ -1,0 +1,17 @@
+pkgbase = nomino-bin
+	pkgdesc = Batch rename utility for developers
+	pkgver = 1.1.0
+	pkgrel = 1
+	url = https://github.com/yaa110/nomino
+	arch = x86_64
+	license = MIT
+	depends = gcc-libs
+	provides = nomino
+	conflicts = nomino
+	source = LICENSE::https://raw.githubusercontent.com/yaa110/nomino/master/LICENSE-MIT
+	sha512sums = 169b314c09dffe76c8bf31929a61e58358c66516c17629cb257e0d44101b78d3949ee6d9951bb813cd6348d8626a0c8f638f6f874db446dce87cfa1de24d39ba
+	source_x86_64 = nomino-1.1.0-linux-64bit::https://github.com/yaa110/nomino/releases/download/1.1.0/nomino-linux-64bit
+	sha512sums_x86_64 = e8d96b281e002ca3b60220c12838db90b6bd80aa0bac5838e628ef2301eee0a06eb830302ae95298267e8b6f9b80adcb2cfa029d9fc9f6fc7c0c0e67fbfb0f97
+
+pkgname = nomino-bin
+
