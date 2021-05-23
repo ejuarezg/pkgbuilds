@@ -1,0 +1,15 @@
+pkgbase = stevenarella-git
+	pkgdesc = Multi-protocol Minecraft-compatible client written in Rust
+	pkgver = r767.710a773
+	pkgrel = 1
+	url = https://github.com/iceiix/stevenarella
+	arch = x86_64
+	license = MIT
+	makedepends = rust
+	provides = stevenarella
+	conflicts = stevenarella
+	source = git+https://github.com/iceiix/stevenarella.git
+	sha256sums = SKIP
+
+pkgname = stevenarella-git
+

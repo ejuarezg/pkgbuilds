@@ -1,0 +1,29 @@
+_gitname=stevenarella
+pkgname=stevenarella-git
+pkgver=r818.eb452ab
+pkgrel=1
+pkgdesc="Multi-protocol Minecraft-compatible client written in Rust"
+arch=(x86_64)
+url="https://github.com/iceiix/${_gitname}"
+license=(MIT)
+makedepends=(rust)
+provides=(stevenarella)
+conflicts=(stevenarella)
+source=("git+${url}.git")
+sha256sums=(SKIP)
+
+pkgver() {
+  cd ${_gitname}
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+    cd ${_gitname}
+    cargo build --release
+}
+
+package() {
+    cd ${_gitname}
+    install -Dm 755 -t "${pkgdir}/usr/bin" ./target/release/${_gitname}
+    install -Dm 644 LICENSE-MIT "${pkgdir}/usr/share/licenses/${_gitname}/LICENSE"
+}
