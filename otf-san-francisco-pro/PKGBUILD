@@ -1,0 +1,41 @@
+# Maintainer: Me
+# Contributor: Gustavo Castro < gustawho [ at ] gmail [ dot ] com >
+# Contributor: Harry Beadle <harrybeadle@protonmail.com>
+# Contributor: Source files from https://aur.archlinux.org/packages/otf-apple-sf-mono/
+
+pkgname=otf-san-francisco-pro
+pkgver=16.0d18e1
+pkgrel=2
+pkgdesc='System font for iOS, macOS, and tvOS. Sourced directly from Apple.'
+arch=('any')
+url='https://developer.apple.com/fonts/'
+license=('custom:apple-restricted-font')
+makedepends=('texlive-bin' 'p7zip')
+source=('https://developer.apple.com/design/downloads/SF-Font-Pro.dmg'
+        'license.awk'
+        'version.awk')
+md5sums=('bab1176e3ae27cdc3b7ef3fdea61ec68'
+         'f5d13097b806110fafd6864b38feee55'
+         '3104753d64b24b81ed46b4ea3b585e0c')
+
+prepare() {
+    7z x -y SF-Font-Pro.dmg
+    7z x -y SanFranciscoPro/San\ Francisco\ Pro.pkg
+    7z x -y "Payload~"
+
+    otfinfo -i Library/Fonts/SF-Pro-Display-BoldItalic.otf | \
+        awk -f license.awk > LICENSE
+}
+
+pkgver() {
+    otfinfo -i Library/Fonts/SF-Pro-Display-BoldItalic.otf | \
+        awk -f version.awk
+}
+
+package() {
+    install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/AppleFontLicense"
+
+    cd Library/Fonts
+    install -Dm644 *.otf -t "${pkgdir}/usr/share/fonts/OTF"
+}
+
