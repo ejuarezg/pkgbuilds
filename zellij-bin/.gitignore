@@ -1,4 +1,7 @@
-*.tar*
-pkg/
-src/
-*.png
+# Ignore everything
+*
+
+# But not these files
+!.gitignore
+!PKGBUILD
+!.SRCINFO
