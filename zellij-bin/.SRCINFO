@@ -1,7 +1,7 @@
 pkgbase = zellij-bin
 	pkgdesc = A terminal workspace and multiplexer.
 	pkgver = 0.12.0
-	pkgrel = 1
+	pkgrel = 2
 	url = https://zellij.dev
 	arch = x86_64
 	arch = aarch64
@@ -14,16 +14,12 @@ pkgbase = zellij-bin
 	conflicts = zellij
 	source_x86_64 = https://github.com/zellij-org/zellij/archive/refs/tags/v0.12.0.tar.gz
 	source_x86_64 = zellij-0.12.0-x86_64-unknown-linux-musl.tar.gz::https://github.com/zellij-org/zellij/releases/download/v0.12.0/zellij-x86_64-unknown-linux-musl.tar.gz
-	source_x86_64 = https://raw.githubusercontent.com/zellij-org/zellij/main/assets/logo.png
 	sha256sums_x86_64 = bf0be6fedc16d05db04c66cc91fdccb3b278cedf2bfa486d26d4c122436a40ab
 	sha256sums_x86_64 = 58e1bf184c513fd38e7991a5217fcdbfb53663743f95e03f2c309684affbcb0f
-	sha256sums_x86_64 = 3e027c6479ac9d6605accc50f7a4b76ac6606d0ca7cde12d1dddd1951e5c64ec
 	source_aarch64 = https://github.com/zellij-org/zellij/archive/refs/tags/v0.12.0.tar.gz
 	source_aarch64 = zellij-0.12.0-aarch64-unknown-linux-musl.tar.gz::https://github.com/zellij-org/zellij/releases/download/v0.12.0/zellij-aarch64-unknown-linux-musl.tar.gz
-	source_aarch64 = https://raw.githubusercontent.com/zellij-org/zellij/main/assets/logo.png
 	sha256sums_aarch64 = bf0be6fedc16d05db04c66cc91fdccb3b278cedf2bfa486d26d4c122436a40ab
 	sha256sums_aarch64 = 5a82fbe63cf786eb4e43f8715c21cb819a0ff3c74d43c8d2ceebbc407dc52073
-	sha256sums_aarch64 = 3e027c6479ac9d6605accc50f7a4b76ac6606d0ca7cde12d1dddd1951e5c64ec
 
 pkgname = zellij-bin
 
