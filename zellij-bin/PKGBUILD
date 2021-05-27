@@ -3,8 +3,8 @@
 
 _pkgname=zellij
 pkgname=zellij-bin
-pkgver=0.11.0
-pkgrel=3
+pkgver=0.12.0
+pkgrel=1
 pkgdesc="A terminal workspace and multiplexer."
 arch=('x86_64' 'aarch64')
 url="https://zellij.dev"
@@ -14,16 +14,16 @@ makedepends=('gendesk' 'imagemagick')
 optdepends=('alacritty: start a zellij session using included desktop file')
 conflicts=('zellij-git' 'zellij')
 source_x86_64=("https://github.com/zellij-org/${_pkgname}/archive/refs/tags/v${pkgver}.tar.gz"
-        "https://github.com/zellij-org/${_pkgname}/releases/download/v${pkgver}/${_pkgname}-x86_64-unknown-linux-musl.tar.gz"
+        "${_pkgname}-${pkgver}-x86_64-unknown-linux-musl.tar.gz::https://github.com/zellij-org/${_pkgname}/releases/download/v${pkgver}/${_pkgname}-x86_64-unknown-linux-musl.tar.gz"
         "https://raw.githubusercontent.com/zellij-org/zellij/main/assets/logo.png")
 source_aarch64=("https://github.com/zellij-org/${_pkgname}/archive/refs/tags/v${pkgver}.tar.gz"
-        "https://github.com/zellij-org/${_pkgname}/releases/download/v${pkgver}/${_pkgname}-aarch64-unknown-linux-musl.tar.gz"
+        "${_pkgname}-${pkgver}-aarch64-unknown-linux-musl.tar.gz::https://github.com/zellij-org/${_pkgname}/releases/download/v${pkgver}/${_pkgname}-aarch64-unknown-linux-musl.tar.gz"
         "https://raw.githubusercontent.com/zellij-org/zellij/main/assets/logo.png")
-sha256sums_x86_64=('2a6a21b9dd62bc92ef3484c24ba1d76e07e5a5c67513dd016653df2e2a00e94b'
-                   '61662347a9cbd1ae6699157ee2ceb842d8ac5506dd7325d97903382b732387c0'
+sha256sums_x86_64=('bf0be6fedc16d05db04c66cc91fdccb3b278cedf2bfa486d26d4c122436a40ab'
+                   '58e1bf184c513fd38e7991a5217fcdbfb53663743f95e03f2c309684affbcb0f'
                    '3e027c6479ac9d6605accc50f7a4b76ac6606d0ca7cde12d1dddd1951e5c64ec')
-sha256sums_aarch64=('2a6a21b9dd62bc92ef3484c24ba1d76e07e5a5c67513dd016653df2e2a00e94b'
-                    '2b33e273210615146a92f458e179dbd1d9399183a1435213859098af75e169a7'
+sha256sums_aarch64=('bf0be6fedc16d05db04c66cc91fdccb3b278cedf2bfa486d26d4c122436a40ab'
+                    '5a82fbe63cf786eb4e43f8715c21cb819a0ff3c74d43c8d2ceebbc407dc52073'
                     '3e027c6479ac9d6605accc50f7a4b76ac6606d0ca7cde12d1dddd1951e5c64ec')
 
 prepare() {
