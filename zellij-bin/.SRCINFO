@@ -1,14 +1,13 @@
 pkgbase = zellij-bin
 	pkgdesc = A terminal workspace and multiplexer.
 	pkgver = 0.12.0
-	pkgrel = 2
+	pkgrel = 3
 	url = https://zellij.dev
 	arch = x86_64
 	arch = aarch64
 	license = MIT
 	makedepends = gendesk
 	makedepends = imagemagick
-	optdepends = alacritty: start a zellij session using included desktop file
 	provides = zellij
 	conflicts = zellij-git
 	conflicts = zellij
