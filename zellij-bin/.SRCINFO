@@ -1,7 +1,7 @@
 pkgbase = zellij-bin
 	pkgdesc = A terminal workspace and multiplexer.
-	pkgver = 0.12.0
-	pkgrel = 3
+	pkgver = 0.12.1
+	pkgrel = 1
 	url = https://zellij.dev
 	arch = x86_64
 	arch = aarch64
@@ -11,14 +11,14 @@ pkgbase = zellij-bin
 	provides = zellij
 	conflicts = zellij-git
 	conflicts = zellij
-	source_x86_64 = https://github.com/zellij-org/zellij/archive/refs/tags/v0.12.0.tar.gz
-	source_x86_64 = zellij-0.12.0-x86_64-unknown-linux-musl.tar.gz::https://github.com/zellij-org/zellij/releases/download/v0.12.0/zellij-x86_64-unknown-linux-musl.tar.gz
-	sha256sums_x86_64 = bf0be6fedc16d05db04c66cc91fdccb3b278cedf2bfa486d26d4c122436a40ab
-	sha256sums_x86_64 = 58e1bf184c513fd38e7991a5217fcdbfb53663743f95e03f2c309684affbcb0f
-	source_aarch64 = https://github.com/zellij-org/zellij/archive/refs/tags/v0.12.0.tar.gz
-	source_aarch64 = zellij-0.12.0-aarch64-unknown-linux-musl.tar.gz::https://github.com/zellij-org/zellij/releases/download/v0.12.0/zellij-aarch64-unknown-linux-musl.tar.gz
-	sha256sums_aarch64 = bf0be6fedc16d05db04c66cc91fdccb3b278cedf2bfa486d26d4c122436a40ab
-	sha256sums_aarch64 = 5a82fbe63cf786eb4e43f8715c21cb819a0ff3c74d43c8d2ceebbc407dc52073
+	source_x86_64 = https://github.com/zellij-org/zellij/archive/refs/tags/v0.12.1.tar.gz
+	source_x86_64 = zellij-0.12.1-x86_64-unknown-linux-musl.tar.gz::https://github.com/zellij-org/zellij/releases/download/v0.12.1/zellij-x86_64-unknown-linux-musl.tar.gz
+	sha256sums_x86_64 = 44ceb99d7c6efae17d172f88c1b98339723c5f9c44e342a2b77c59091bae169e
+	sha256sums_x86_64 = 904e206b7e62fbcbca028eff093ae4d2347130de52ae708a06b69885fe0445bc
+	source_aarch64 = https://github.com/zellij-org/zellij/archive/refs/tags/v0.12.1.tar.gz
+	source_aarch64 = zellij-0.12.1-aarch64-unknown-linux-musl.tar.gz::https://github.com/zellij-org/zellij/releases/download/v0.12.1/zellij-aarch64-unknown-linux-musl.tar.gz
+	sha256sums_aarch64 = 44ceb99d7c6efae17d172f88c1b98339723c5f9c44e342a2b77c59091bae169e
+	sha256sums_aarch64 = afb3c8cfcc69a195c95a03140f07044a9b0962be75c9cabfd4b7926939e1f4d9
 
 pkgname = zellij-bin
 
