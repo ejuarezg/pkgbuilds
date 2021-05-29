@@ -1,6 +1,6 @@
 pkgbase = deskx-git
 	pkgdesc = Program for remote control of a computer in a local network.
-	pkgver = 1.0.r2.g8180544
+	pkgver = 1.0.r12.g311da6e
 	pkgrel = 1
 	url = https://github.com/DeskX11/DeskX
 	arch = x86_64

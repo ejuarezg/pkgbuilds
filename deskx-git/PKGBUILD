@@ -2,7 +2,7 @@
 
 _pkgname="deskx"
 pkgname="${_pkgname}-git"
-pkgver=1.0.r2.g8180544
+pkgver=1.0.r12.g311da6e
 pkgrel=1
 pkgdesc='Program for remote control of a computer in a local network.'
 arch=('x86_64')
@@ -21,12 +21,13 @@ pkgver() {
 }
 
 build() {
-  cd "${pkgname}/src"
-  make all
+  cd "${pkgname}"
+  make client
+  make server
 }
 
 package() {
-  cd "${pkgname}/src"
+  cd "${pkgname}"
   install -Dm755 dxc dxs -t "${pkgdir}/usr/bin"
-  install -Dm644 ../LICENSE -t "${pkgdir}/usr/share/licenses/${_pkgname}"
+  install -Dm644 LICENSE -t "${pkgdir}/usr/share/licenses/${_pkgname}"
 }
