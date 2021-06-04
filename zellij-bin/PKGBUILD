@@ -3,7 +3,7 @@
 
 _pkgname=zellij
 pkgname=zellij-bin
-pkgver=0.12.1
+pkgver=0.13.0
 pkgrel=1
 pkgdesc="A terminal workspace and multiplexer."
 arch=('x86_64' 'aarch64')
@@ -16,10 +16,10 @@ source_x86_64=("https://github.com/zellij-org/${_pkgname}/archive/refs/tags/v${p
         "${_pkgname}-${pkgver}-x86_64-unknown-linux-musl.tar.gz::https://github.com/zellij-org/${_pkgname}/releases/download/v${pkgver}/${_pkgname}-x86_64-unknown-linux-musl.tar.gz")
 source_aarch64=("https://github.com/zellij-org/${_pkgname}/archive/refs/tags/v${pkgver}.tar.gz"
         "${_pkgname}-${pkgver}-aarch64-unknown-linux-musl.tar.gz::https://github.com/zellij-org/${_pkgname}/releases/download/v${pkgver}/${_pkgname}-aarch64-unknown-linux-musl.tar.gz")
-sha256sums_x86_64=('44ceb99d7c6efae17d172f88c1b98339723c5f9c44e342a2b77c59091bae169e'
-                   '904e206b7e62fbcbca028eff093ae4d2347130de52ae708a06b69885fe0445bc')
-sha256sums_aarch64=('44ceb99d7c6efae17d172f88c1b98339723c5f9c44e342a2b77c59091bae169e'
-                    'afb3c8cfcc69a195c95a03140f07044a9b0962be75c9cabfd4b7926939e1f4d9')
+sha256sums_x86_64=('5439561d8d7fb51d0f9bd1f3d5a0caa79ffc7dffd1c910adc7c56841df2cfb6a'
+                   '226b1d0c29ac5ea43f319dca57814d36acef60ae92bb37d5b9d0f1f3a47bdef5')
+sha256sums_aarch64=('5439561d8d7fb51d0f9bd1f3d5a0caa79ffc7dffd1c910adc7c56841df2cfb6a'
+                    '811917c8bc807fa9073834b38428a046bee99422cfecb00671503112a6343eaf')
 
 prepare() {
     # Generate shell completions
