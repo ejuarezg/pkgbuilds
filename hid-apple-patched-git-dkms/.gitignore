@@ -1,0 +1,11 @@
+# Ignore everything
+*
+
+# But not these files
+!.gitignore
+!PKGBUILD
+!.SRCINFO
+!dkms.conf
+!hid-apple-patched-dkms.install
+!hid_apple.depmod
+!hid_apple.modprobe
