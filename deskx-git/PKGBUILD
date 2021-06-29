@@ -2,7 +2,7 @@
 
 _pkgname="deskx"
 pkgname="${_pkgname}-git"
-pkgver=1.0.r12.g311da6e
+pkgver=1.0.r4.g3bf4183
 pkgrel=1
 pkgdesc='Program for remote control of a computer in a local network.'
 arch=('x86_64')
@@ -22,8 +22,7 @@ pkgver() {
 
 build() {
   cd "${pkgname}"
-  make client
-  make server
+  make client server
 }
 
 package() {
