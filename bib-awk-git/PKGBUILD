@@ -3,12 +3,12 @@
 _pkgname="bib.awk"
 pkgname="bib-awk-git"
 pkgver=r16.9b516a0
-pkgrel=3
+pkgrel=1
 pkgdesc='Bibliography manager written in awk.'
 arch=('any')
 url="https://github.com/huijunchen9260/$_pkgname"
 license=('unknown')
-depends=('gawk' 'nawk' 'curl' 'ghostscript' 'xdg-utils')
+depends=('gawk' 'mawk' 'curl' 'ghostscript' 'xdg-utils')
 makedepends=('git' 'make')
 optdepends=('xdotool: hide/show terminal when opening graphical software'
             'xclip: clipboard support'
@@ -26,9 +26,6 @@ pkgver() {
 
 prepare() {
   cd "$_pkgname"
-
-  # Use nawk interpreter instead of mawk
-  gawk -i inplace '{gsub(/mawk/, "nawk")};{print}' bib_tui.awk
 
   # Change path of TEX template
   gawk -i inplace '{gsub(/^\s*TEXTEMP.*/, "    TEXTEMP = \"'"/usr/share/${pkgname%-git}/template.tex"'\"")};{print}' bib.awk
