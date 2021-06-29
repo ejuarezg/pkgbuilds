@@ -1,0 +1,24 @@
+pkgbase = bib-awk-git
+	pkgdesc = Bibliography manager written in awk.
+	pkgver = r16.9b516a0
+	pkgrel = 2
+	url = https://github.com/huijunchen9260/bib.awk
+	arch = any
+	license = MIT
+	makedepends = git
+	makedepends = make
+	depends = gawk
+	depends = nawk
+	depends = curl
+	depends = ghostscript
+	depends = xdg-utils
+	optdepends = xdotool: hide/show terminal when opening graphical software
+	optdepends = xclip: clipboard support
+	optdepends = xsel: clipboard support
+	provides = bib-awk
+	conflicts = bib-awk
+	source = bib.awk::git+https://github.com/huijunchen9260/bib.awk.git
+	md5sums = SKIP
+
+pkgname = bib-awk-git
+

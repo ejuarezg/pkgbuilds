@@ -1,0 +1,37 @@
+# Maintainer: Me
+
+_pkgname="bib.awk"
+pkgname="bib-awk-git"
+pkgver=r16.9b516a0
+pkgrel=2
+pkgdesc='Bibliography manager written in awk.'
+arch=('any')
+url="https://github.com/huijunchen9260/$_pkgname"
+license=('MIT')
+depends=('gawk' 'nawk' 'curl' 'ghostscript' 'xdg-utils')
+makedepends=('git' 'make')
+optdepends=('xdotool: hide/show terminal when opening graphical software'
+            'xclip: clipboard support'
+            'xsel: clipboard support')
+provides=('bib-awk')
+conflicts=('bib-awk')
+source=("$_pkgname::git+${url}.git")
+md5sums=('SKIP')
+
+pkgver() {
+  cd "$_pkgname"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+prepare() {
+  cd "$_pkgname"
+  gawk -i inplace '{gsub(/mawk/, "nawk")};{print}' bib_tui.awk
+}
+
+package() {
+  cd "${_pkgname}"
+  PREFIX="$pkgdir/usr" make install
+  cd "$pkgdir/usr/bin"
+  mv bib.awk bib-awk
+  mv bib_tui.awk bib-tui-awk
+}
