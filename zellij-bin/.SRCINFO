@@ -1,6 +1,6 @@
 pkgbase = zellij-bin
 	pkgdesc = A terminal workspace and multiplexer.
-	pkgver = 0.14.0
+	pkgver = 0.15.0
 	pkgrel = 1
 	url = https://zellij.dev
 	arch = x86_64
@@ -11,14 +11,13 @@ pkgbase = zellij-bin
 	provides = zellij
 	conflicts = zellij-git
 	conflicts = zellij
-	source_x86_64 = https://github.com/zellij-org/zellij/archive/refs/tags/v0.14.0.tar.gz
-	source_x86_64 = zellij-0.14.0-x86_64-unknown-linux-musl.tar.gz::https://github.com/zellij-org/zellij/releases/download/v0.14.0/zellij-x86_64-unknown-linux-musl.tar.gz
-	sha256sums_x86_64 = 45ce99d0c13de562f27b46e9693ff0cdf1dba2d15568410fcb67c9b0e9d6b500
-	sha256sums_x86_64 = f52cc150cf7aac0fbdf88e6222d7922a73c56d671aea3a0168326f4ec2ed7311
-	source_aarch64 = https://github.com/zellij-org/zellij/archive/refs/tags/v0.14.0.tar.gz
-	source_aarch64 = zellij-0.14.0-aarch64-unknown-linux-musl.tar.gz::https://github.com/zellij-org/zellij/releases/download/v0.14.0/zellij-aarch64-unknown-linux-musl.tar.gz
-	sha256sums_aarch64 = 45ce99d0c13de562f27b46e9693ff0cdf1dba2d15568410fcb67c9b0e9d6b500
-	sha256sums_aarch64 = 5fa46a00dfffd19b4faf4704847374957dc1e55dd9c7877317372e634f995ece
+	source_x86_64 = https://github.com/zellij-org/zellij/archive/refs/tags/v0.15.0.tar.gz
+	source_x86_64 = zellij-0.15.0-x86_64-unknown-linux-musl.tar.gz::https://github.com/zellij-org/zellij/releases/download/v0.15.0/zellij-x86_64-unknown-linux-musl.tar.gz
+	sha256sums_x86_64 = e8f3f190d75b89050ca7a85114ddb80aa8f03af66376452bbd5ed5c412a94e76
+	sha256sums_x86_64 = d5eb2a626b48518157ce4823284e3974cecf5ed1f77bceeaeee9f593846d58be
+	source_aarch64 = https://github.com/zellij-org/zellij/archive/refs/tags/v0.15.0.tar.gz
+	source_aarch64 = zellij-0.15.0-aarch64-unknown-linux-musl.tar.gz::https://github.com/zellij-org/zellij/releases/download/v0.15.0/zellij-aarch64-unknown-linux-musl.tar.gz
+	sha256sums_aarch64 = e8f3f190d75b89050ca7a85114ddb80aa8f03af66376452bbd5ed5c412a94e76
+	sha256sums_aarch64 = f7e1f7b997704f0278d3ee72daf403bd526c6519a067da99b7d24272cc4e47ef
 
 pkgname = zellij-bin
-
